@@ -1,0 +1,31 @@
+{
+  "name": "fun-route",
+  "version": "0.0.0",
+  "description": "Purely functional routes for restify",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "test-watch": "mocha -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ed0wolf/fun-route.git"
+  },
+  "keywords": [
+    "restify",
+    "functional",
+    "pure"
+  ],
+  "author": "ed0wolf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ed0wolf/fun-route/issues"
+  },
+  "devDependencies": {
+    "chai": "^2.1.0",
+    "ramda": "^0.10.0",
+    "restify": "^2.8.5",
+    "restify-response": "^2.6.1",
+    "sinon": "^1.12.2"
+  }
+}
