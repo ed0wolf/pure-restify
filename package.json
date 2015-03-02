@@ -1,5 +1,5 @@
 {
-  "name": "fun-route",
+  "name": "pure-restify",
   "version": "0.0.0",
   "description": "Purely functional routes for restify",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ed0wolf/fun-route.git"
+    "url": "https://github.com/ed0wolf/pure-restify.git"
   },
   "keywords": [
     "restify",
@@ -19,7 +19,7 @@
   "author": "ed0wolf",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ed0wolf/fun-route/issues"
+    "url": "https://github.com/ed0wolf/pure-restify/issues"
   },
   "devDependencies": {
     "chai": "^2.1.0",

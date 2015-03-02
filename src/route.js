@@ -5,12 +5,13 @@ module.exports = function(pureRoute) {
     var pureRes = pureRoute(req);
 
     if(pureRes.statusCode) res.status(pureRes.statusCode);
-    if(pureRes.body) res.send(pureRes.body);
     if(pureRes.headers) {
       for(var k in pureRes.headers){
         res.header(k, pureRes.headers[k]);
       }
     }
-    return next();
+
+    res.send(pureRes.body);
+    next();
   };
 };

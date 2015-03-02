@@ -21,6 +21,23 @@ describe('when pure route', function() {
     next = sinon.spy();
   });
 
+  describe('does not return a body', function() {
+    beforeEach(function() {
+      outerRoute = route(function() {
+        return {};
+      });
+      outerRoute(req, res, next);
+    });
+
+    it('should call send on response', function() {
+      res.send.calledWith(undefined).should.be.true;
+    });
+
+    it('should call next', function() {
+      next.calledOnce.should.be.true;
+    });
+  });
+
   describe('returns status code', function() {
     var statusCode = 418;
     beforeEach(function() {
