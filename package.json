@@ -2,7 +2,8 @@
   "name": "pure-restify",
   "version": "0.0.0",
   "description": "Purely functional routes for restify",
-  "main": "index.js",
+  "author": "Edward O'Reilly",
+  "main": "src/route.js",
   "scripts": {
     "test": "mocha",
     "test-watch": "mocha -w"
@@ -16,16 +17,17 @@
     "functional",
     "pure"
   ],
-  "author": "ed0wolf",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ed0wolf/pure-restify/issues"
   },
   "devDependencies": {
     "chai": "^2.1.0",
+    "data.future": "^2.3.0",
     "ramda": "^0.10.0",
-    "restify": "^2.8.5",
-    "restify-response": "^2.6.1",
     "sinon": "^1.12.2"
+  },
+  "dependencies": {
+    "lodash.curry": "^3.0.0"
   }
 }

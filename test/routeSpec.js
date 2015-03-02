@@ -1,7 +1,8 @@
 var route = require('../src/route.js'),
     R = require('ramda'),
     should = require('chai').should(),
-    sinon = require('sinon');
+    sinon = require('sinon'),
+    Future = require('data.future');
 
 describe('when creating route with null', function() {
   it('should throw', function() {
@@ -111,5 +112,28 @@ describe('when pure route', function() {
       injectedRequest.should.equal(req);
     });
   });
+
+  describe('returns a populated future', function() {
+    var pureRes = { statusCode: 123, body: { isBody: true } };
+    beforeEach(function() {
+      outerRoute = route(function() {
+        return Future.of(pureRes);
+      });
+      outerRoute(req, res, next);
+    });
+
+    it('should set the status', function() {
+      res.status.calledWith(pureRes.statusCode).should.be.true;
+    });
+
+    it('should set the body', function() {
+      res.send.calledWithMatch(pureRes.body).should.be.true;
+    });
+
+    it('should call next', function() {
+      next.calledOnce.should.be.true;
+    });
+  });
+
 }); 
 
