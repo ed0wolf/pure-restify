@@ -18,7 +18,7 @@ module.exports = function(pureRoute) {
     var pureRes = pureRoute(req);
     
     if(pureRes.fork) {
-      pureRes.fork(null, handlePureResult(res));
+      pureRes.fork(handlePureResult.bind(this, res, {statusCode: 500}), handlePureResult(res));
     } else {
       handlePureResult(res, pureRes);
     }

@@ -113,7 +113,7 @@ describe('when pure route', function() {
     });
   });
 
-  describe('returns a populated future', function() {
+  describe('returns a resolved future', function() {
     var pureRes = { statusCode: 123, body: { isBody: true } };
     beforeEach(function() {
       outerRoute = route(function() {
@@ -135,5 +135,21 @@ describe('when pure route', function() {
     });
   });
 
+  describe('returns a rejected future', function() {
+    beforeEach(function() {
+      outerRoute = route(function() {
+        return Future.rejected({});
+      });
+      outerRoute(req, res, next);
+    });
+
+    it('should set the status', function() {
+      res.status.calledWith(500).should.be.true;
+    });
+
+    it('should call next', function() {
+      next.calledOnce.should.be.true;
+    });
+  });
 }); 
 
