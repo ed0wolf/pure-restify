@@ -1,0 +1,22 @@
+{
+  "name": "pointfree-future",
+  "version": "0.0.0",
+  "description": "pure restify route example returning futures in a pointfree style",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "restify",
+    "pointfree",
+    "pure"
+  ],
+  "author": "Edward O'Reilly",
+  "license": "ISC",
+  "dependencies": {
+    "data.future": "^2.3.0",
+    "pointfree-fantasy": "^0.1.1",
+    "ramda": "^0.10.0",
+    "restify": "^2.8.5"
+  }
+}
