@@ -1,14 +1,15 @@
 var curry = require('lodash.curry');
 
 var handlePureResult = curry(function(res, pr) {
-  if(pr.statusCode) res.status(pr.statusCode);
   if(pr.headers) {
     for(var k in pr.headers){
       res.header(k, pr.headers[k]);
     }
   }
 
-  res.send(pr.body);
+  return pr.statusCode 
+    ? res.send(pr.statusCode, pr.body)
+    : res.send(pr.body);
 });
 
 module.exports = function(pureRoute) {

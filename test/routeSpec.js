@@ -15,7 +15,6 @@ describe('when pure route', function() {
   beforeEach(function() {
     req = { isReq: true };
     res = {
-      status: sinon.spy(),
       send: sinon.spy(),
       header: sinon.spy()
     };
@@ -49,7 +48,7 @@ describe('when pure route', function() {
     });
 
     it('should set status code on the response', function() {
-      res.status.calledWith(statusCode).should.be.true;
+      res.send.calledWith(statusCode).should.be.true;
     });
 
     it('should call next', function() {
@@ -93,6 +92,10 @@ describe('when pure route', function() {
       res.header.calledWith('foo', 'bar').should.be.true;   
     });
 
+    it('should call send with undefined', function() {
+      res.send.calledWith(undefined).should.be.true;
+    });
+
     it('should call next', function() {
       next.calledOnce.should.be.true;
     });
@@ -122,12 +125,8 @@ describe('when pure route', function() {
       outerRoute(req, res, next);
     });
 
-    it('should set the status', function() {
-      res.status.calledWith(pureRes.statusCode).should.be.true;
-    });
-
-    it('should set the body', function() {
-      res.send.calledWithMatch(pureRes.body).should.be.true;
+    it('should send the status and body', function() {
+      res.send.calledWith(pureRes.statusCode, pureRes.body).should.be.true;
     });
 
     it('should call next', function() {
@@ -144,7 +143,7 @@ describe('when pure route', function() {
     });
 
     it('should set the status', function() {
-      res.status.calledWith(500).should.be.true;
+      res.send.calledWith(500).should.be.true;
     });
 
     it('should call next', function() {
