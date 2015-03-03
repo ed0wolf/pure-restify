@@ -18,7 +18,7 @@ var respond = pure(function(req) {
 
 By wrapping this function in pure, we can simply return what we wish to respond. Pure Restify handles the res.send and next calls for us.
 
-Another nice thing about pure is that it also handles responses returned in futures. Meaning your function can return it a future of the response you want to return and it will fork it and handle the response for you.
+Another nice thing about pure is that it also handles responses returned in futures (https://www.npmjs.com/package/data.future). Meaning your function can return it a future of the response you want to return and it will fork it and handle the response for you.
 
 ```javascript
 var respond = pure(function(req) {
