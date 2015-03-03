@@ -1,6 +1,6 @@
 {
   "name": "pure-restify",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Purely functional routes for restify",
   "author": "Edward O'Reilly",
   "main": "src/route.js",
