@@ -1,0 +1,15 @@
+{
+  "name": "hello-world",
+  "version": "0.0.0",
+  "description": "Restify hello world example using pure route",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edward O'Reilly",
+  "license": "ISC",
+  "dependencies": {
+    "pure-restify": "0.0.1",
+    "restify": "^2.8.5"
+  }
+}
