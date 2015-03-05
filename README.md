@@ -1,4 +1,5 @@
 # Pure Restify
+[![Build Status](https://travis-ci.org/ed0wolf/pure-restify.svg?branch=master)](https://travis-ci.org/ed0wolf/pure-restify)
 
 Allows you to turn any restify endpoints into pure functions. 
 
